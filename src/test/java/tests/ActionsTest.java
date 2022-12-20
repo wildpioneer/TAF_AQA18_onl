@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ActionsTest extends BaseTest {
 
-    @Test
+    //@Test
     public void hoverTest() {
         driver.get("http://the-internet.herokuapp.com/hovers");
 
@@ -29,7 +29,7 @@ public class ActionsTest extends BaseTest {
         Assert.assertTrue(waitsService.waitForElementInvisible(targetElements.get(0)));
     }
 
-    @Test
+    //@Test
     public void fileUploadTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/upload");
 
