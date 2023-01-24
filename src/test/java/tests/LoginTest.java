@@ -16,16 +16,6 @@ import steps.UserStep;
 
 public class LoginTest extends BaseTest {
 
-    //@Test
-    public void loginTest() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.getEmailInput().sendKeys(ReadProperties.username());
-        loginPage.getPassword().sendKeys(ReadProperties.password());
-        loginPage.getLogInButton().click();
-
-        Assert.assertTrue(new DashboardPage(driver).isPageOpened());
-    }
-
     @Test(description = "Description")
     @Issue("AQA18-12")
     @TmsLink("TC-001")
