@@ -3,16 +3,11 @@ package tests;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import io.qameta.allure.*;
-import models.Project;
 import models.User;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.DashboardPage;
-import pages.LoginPage;
 import pages.project.AddProjectPage;
 import steps.NavigationSteps;
-import steps.UserStep;
 
 public class LoginTest extends BaseTest {
 
@@ -44,6 +39,7 @@ public class LoginTest extends BaseTest {
         );
     }
 
+    // Добавил комментарий
     @Test
     public void radioButtonTest() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
