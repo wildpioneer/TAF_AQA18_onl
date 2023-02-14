@@ -1,20 +1,29 @@
 package models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Objects;
 
 public class Project {
-    private String name;
+    @SerializedName(value = "name")
+    private String nameA;
+
     private String announcement;
+
+    @SerializedName(value = "suite_mode")
     private int type;
+
+    @SerializedName(value = "show_announcement")
     private boolean showAnnouncement;
+
     private boolean deleted;
 
     public String getName() {
-        return name;
+        return nameA;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nameA = name;
     }
 
     public String getAnnouncement() {
@@ -52,7 +61,7 @@ public class Project {
     @Override
     public String toString() {
         return "Project{" +
-                "name='" + name + '\'' +
+                "name='" + nameA + '\'' +
                 ", announcement='" + announcement + '\'' +
                 ", type=" + type +
                 ", showAnnouncement=" + showAnnouncement +
