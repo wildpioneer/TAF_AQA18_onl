@@ -20,15 +20,7 @@ public class BrowserFactory {
                 DriverManagerType driverManagerType = DriverManagerType.CHROME;
                 WebDriverManager.getInstance(driverManagerType).setup();
 
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.setHeadless(ReadProperties.isHeadless());
-                chromeOptions.addArguments("--disable-gpu");
-                //chromeOptions.addArguments("--window-size=1920,1200");
-                chromeOptions.addArguments("--ignore-certificate-errors");
-                chromeOptions.addArguments("--silent");
-                chromeOptions.addArguments("--start-maximized");
-
-                driver = new ChromeDriver(chromeOptions);
+                driver = new ChromeDriver(getOptions());
 
                 break;
             case "firefox":
@@ -49,5 +41,18 @@ public class BrowserFactory {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
         return driver;
+    }
+
+    private ChromeOptions getOptions() {
+        ChromeOptions chromeOptions = new ChromeOptions();
+
+        chromeOptions.setHeadless(ReadProperties.isHeadless());
+        chromeOptions.addArguments("--disable-gpu");
+        //chromeOptions.addArguments("--window-size=1920,1200");
+        chromeOptions.addArguments("--ignore-certificate-errors");
+        chromeOptions.addArguments("--silent");
+        chromeOptions.addArguments("--start-maximized");
+
+        return chromeOptions;
     }
 }
