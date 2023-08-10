@@ -14,12 +14,13 @@ public class RadioButton {
 
     // Продумать механизм поиска этого элемента
     // поиск по name
-    public RadioButton(WebDriver driver, String attributeNameValue) {
+    public RadioButton(WebDriver driver, By by) {
+    //public RadioButton(WebDriver driver, String attributeNameValue) {
         uiElementList = new ArrayList<>();
         valueList = new ArrayList<>();
         textList = new ArrayList<>();
 
-        for (WebElement webElement : driver.findElements(By.name(attributeNameValue))) {
+        for (WebElement webElement : driver.findElements(by)) {
             UIElement element = new UIElement(driver, webElement);
             uiElementList.add(element);
             valueList.add(element.getAttribute("value"));
